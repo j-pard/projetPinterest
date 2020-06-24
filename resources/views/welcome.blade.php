@@ -46,4 +46,15 @@
 </div>
 <!-- Grid row -->
 </section>
+
+
+@foreach ($articles as $article)
+<h2>{{ $article->title }}</h2>
+<ul>
+    <li><strong>{{ $article->author }}</strong></li>
+    <li><img src = "{{$article->image}}"></li>
+    <li>{{$article->date}}</li>
+    <li>{{$article->description}}</li>
+</ul>
+@endforeach
 @endsection
