@@ -25,12 +25,11 @@ Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
 });
 
+
 Route::group(['middleware' => 'auth'], function() {
     Route::get('/profil', function() {
-        return view('profil');
+        return view('profiles.show');
     });
+    Route::get('/profil/edit', 'UsersController@edit');
+    Route::patch('/profil/update', 'UsersController@update');
 });
-
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
