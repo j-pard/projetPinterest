@@ -20,17 +20,16 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+Route::get('/create', 'ArticleController@create');
+Route::post('/create', 'ArticleController@store');
+Route::get('/show/{id}', 'ArticleController@show');
 
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
 });
 
-Route::group(['middleware' => 'auth'], function() {
-    Route::get('/profil', function() {
+Route::group(['middleware' => 'auth'], function () {
+    Route::get('/profil', function () {
         return view('profil');
     });
 });
-
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
