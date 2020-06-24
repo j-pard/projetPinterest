@@ -20,9 +20,17 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('/logout', 'LoginController@logout');
-
 
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
 });
+
+Route::group(['middleware' => 'auth'], function() {
+    Route::get('/profil', function() {
+        return view('profil');
+    });
+});
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
