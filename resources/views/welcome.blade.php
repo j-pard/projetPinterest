@@ -4,7 +4,6 @@
 
 @section('content')
 <section class="container">
-
 <div class="gallery" id="gallery">
 
 @foreach ($articles as $article)
@@ -26,5 +25,4 @@
     <li>{{$article->description}}</li>
 </ul>
 @endforeach -->
-
 @endsection

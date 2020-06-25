@@ -35,12 +35,11 @@ class UsersController extends Controller
     public function update(Request $request)
     {
         $validatedData = $request->validate([
-            'name' => 'required|min:3|max:255',
-            'password' => 'required|min:3|max:255',
-            'email' => 'required|min:5|max:255'
+            'pseudo' => 'required|min:3|max:255',
+            'email' => 'required|min:5|max:255',
+            'firstname' => 'min:3|max:255',
+            'lastname' => 'min:3|max:255'
         ]);
-
-        $validatedData['password'] = Hash::make($validatedData['password']);
 
         $user = User::where('id', $request->id)
             ->update($validatedData);
@@ -60,4 +59,5 @@ class UsersController extends Controller
         $user->delete();
         return response ()->json ();
     }
+
 }

@@ -31,7 +31,6 @@ Route::group(['prefix' => 'admin'], function () {
 Route::group(['middleware' => 'auth'], function() {
     Route::get('/profil', function() {
         return view('profiles.show');
-
     });
     Route::get('/profil/edit', 'UsersController@edit');
     Route::patch('/profil/update', 'UsersController@update');
