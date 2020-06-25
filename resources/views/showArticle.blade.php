@@ -36,9 +36,11 @@ $newDate = date("d-m-Y", strtotime($originalDate));
                 <div class="cardbox shadow-lg bg-white">
 
                     <div class="cardbox-heading">
+                        @if(Auth::user()->id == $article->author)
                         <div class="float-right">
-                            <a href="/edit/{{ $article->id }}" class="btn btn-flat btn-flat-icon" role="button"><em class="fa fa-ellipsis-h"></em></a>
+                            <a href="/edit/{{ $article->id }}" class="btn btn-flat btn-flat-icon" role="button"><em class="fa fa-cog"></em></a>
                         </div>
+                        @endif
                         <div class="media m-0">
                             <div class="d-flex mr-3">
                                 <a href=""><img class="img-fluid rounded-circle" src="/{{ $author_avatar }}"

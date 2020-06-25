@@ -110,24 +110,17 @@
   }
   .cardbox .cardbox-item img{
   }
-  .img-responsive{
-      display: block;
-      max-width: 100%;
-      height: auto;
+  .img-fluid{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: max-content;
+    height: auto;
   }	
   .fw {
       width: 100% !important;
       height: auto;
   }
-
-  .img-fluid {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    max-width: 100%;
-    height: auto;
-  }
-  
   
   /* ------------------------------- */
   /* Cardbox Base

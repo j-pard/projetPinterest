@@ -165,22 +165,18 @@
   display: block;
 }
 
-.img-responsive {
+.img-fluid {
   display: block;
-  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: -webkit-max-content;
+  max-width: -moz-max-content;
+  max-width: max-content;
   height: auto;
 }
 
 .fw {
   width: 100% !important;
-  height: auto;
-}
-
-.img-fluid {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  max-width: 100%;
   height: auto;
 }
 
