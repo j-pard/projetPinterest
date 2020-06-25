@@ -9,8 +9,6 @@
             </figure>
             <h3>Nom : {{ Auth::user()->pseudo }}</h3>
             <h3>Email : {{ Auth::user()->email }}</h3>
-
-            <a href="/profil/edit" class="btn btn-info" role="button">Modifier profil</a>
       </section>
       
 
