@@ -58,8 +58,14 @@ class ArticleController extends Controller
      */
     public function show($id)
     {
-        $articles = Article::findOrFail($id);
-        return view('showArticle', compact('articles'));
+        $article = Article::findOrFail($id);
+        if(Auth::check()) {
+            return view('showArticle', compact('article'));
+        }
+        else {
+            return redirect('/register');
+        }
+        
     }
 
     /**
