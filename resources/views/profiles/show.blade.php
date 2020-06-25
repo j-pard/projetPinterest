@@ -10,4 +10,6 @@
 
       <a href="/profil/edit" class="btn btn-info" role="button">Modifier profil</a>
 
+
+
 @endsection
