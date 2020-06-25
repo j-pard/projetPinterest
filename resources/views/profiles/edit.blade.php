@@ -10,7 +10,7 @@
       <input type="number" name="id" readonly class="d-none" value="{{ Auth::user()->id }}">
       <div class="form-group">
         <label for="profil-name-edit">Pseudo</label>
-        <input type="text" name="name" class="form-control" id="profil-name-edit" placeholder="Enter your pseudo" value="{{ Auth::user()->name }}">
+        <input type="text" name="pseudo" class="form-control" id="profil-pseudo-edit" placeholder="Enter your pseudo" value="{{ Auth::user()->pseudo }}">
       </div>
       <div class="form-group">
         <label for="profil-password-edit">Mot de passe</label>

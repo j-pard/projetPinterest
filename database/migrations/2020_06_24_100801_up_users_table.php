@@ -14,10 +14,14 @@ class UpUsersTable extends Migration
     public function up()
     {
         Schema::table('users', function (Blueprint $table) {
+            $table->string("pseudo");
+            $table->string("email")->unique();
+            $table->string("avatar")->default('user.jpg');
+            $table->string("password");
             $table->string("firstname");
             $table->string("lastname");
-            $table->string("pseudo");
-            $table->string("articles_id");
+            $table->rememberToken();
+            $table->timestamps();
         });
     }
 
