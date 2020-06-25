@@ -6,7 +6,7 @@
       }
 </style>
 
-      <h2>Add new restaurant to DB</h2>
+      <h2>Add new image to DB</h2>
 
       <nav>
             <a href="/">HOME</a>
