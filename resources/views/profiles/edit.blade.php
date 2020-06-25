@@ -1,6 +1,23 @@
 @extends('layouts.app')
 
 @section('content')
+
+<div class="container">
+      <h1>Modifier votre profil</h1>
+          <hr>
+        <div class="row">
+        <!-- left column -->
+        <div class="col-md-3">
+          <div class="text-center">
+            <img src="//placehold.it/100" class="avatar img-circle" alt="avatar">
+            <h6>Changer de photo de profil</h6>
+            
+            <input type="file" class="form-control">
+          </div>
+        </div>
+        
+        <!-- edit form column -->
+        <div class="col-md-9 personal-info">
       
 <form action="/profil/update" method="POST">
       {{-- Token for cross-site security --}}
@@ -29,7 +46,7 @@
             <input type="email" name="email" class="form-control" id="profil-mail-edit" placeholder="Email" value="{{ Auth::user()->email }}">
       </div>
      
-      <button type="submit" class="btn btn-primary">Modifier</button>
+      <button type="submit" class="btn btn-secondary">Modifier</button>
     </form>
 
     <!-- Erros Handling -->

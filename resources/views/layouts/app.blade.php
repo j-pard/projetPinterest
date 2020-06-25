@@ -59,6 +59,8 @@
 
                                     <a class="dropdown-item" href="/profil">Mon Profil</a>
 
+                                    <a href="/profil/edit" class="dropdown-item">Modifier profil</a>
+
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
