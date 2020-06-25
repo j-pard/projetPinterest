@@ -11,7 +11,7 @@
 
   <!-- Grid column -->
   <div class="mb-3 pics animation all 1">
-    <img class="img-fluid" src = "{{$article->image}}" alt="Card image cap"> 
+    <img class="img-fluid" src = "{{$article->image}}" alt="{{$article->title}}"> 
   </div>
 
   @endforeach
