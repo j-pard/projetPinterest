@@ -10,7 +10,6 @@
 
         <h2>{{ $article->title }}</h2>
         <ul>
-            <li><strong>{{ $article->author }}</strong></li>
             <li>{{$article->date}}</li>
             <li><img src = "{{$article->image}}"></li>
             <li>{{$article->description}}</li>
