@@ -3,11 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Article;
-
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 
 class ArticleController extends Controller
-{
+{   
     /**
      * Display a listing of the resource.
      *
@@ -36,15 +36,16 @@ class ArticleController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {
+    
+    {   
         $valideData = $request->validate([
-            'date' => 'required|min:1|max:255',
-            'author' => 'required|min:5|max:255',
-            'title' => 'required|min:5|max:255',
-            'image' => 'required',
+            'title' => 'required|max:255',
+            'image' => 'required|max:1000',
             'description' => 'max:400',
-
         ]);
+        $valideData['author'] = Auth::user()->id;
+
+        
         Article::create($valideData);
     }
 
@@ -68,8 +69,14 @@ class ArticleController extends Controller
      */
     public function edit($id)
     {
-        // $articles = Article::findOrFail($id);
-        // return view('home',compact('article'));
+        if (Gate::forUser($user)->allows('edit-article', $article)) {
+            $articles = Article::findOrFail($id);
+            return view('edit',compact('article'));
+        }
+
+        if (Gate::forUser($user)->denies('update-post', $post)) {
+            return "not allowed";
+        }
     }
 
     /**
