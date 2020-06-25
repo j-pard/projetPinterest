@@ -14,8 +14,8 @@
       <form action="/edit/{{ $article->id }}" method="POST">
             {{ csrf_field() }}
             {{ method_field('PATCH') }}
-            <input type="text" name="title" id="title" placeholder="Titre de l'article">
-            <input type="textarea" name="description" id="description" rows="5" cols="30" placeholder="Décrire votre article">
+            <input type="text" name="title" id="title" placeholder="Titre de l'article" value="{{ $article->title }}">
+            <input type="textarea" name="description" id="description" rows="5" cols="30" placeholder="Décrire votre article" value="{{ $article->description }}">
             <input type="submit" value="Save">
       </form>
       
