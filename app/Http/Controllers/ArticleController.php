@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Article;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Gate;
 use Illuminate\Http\Request;
 
 class ArticleController extends Controller
@@ -57,8 +58,14 @@ class ArticleController extends Controller
      */
     public function show($id)
     {
-        $articles = Article::findOrFail($id);
-        return view('showArticle', compact('articles'));
+        $article = Article::findOrFail($id);
+        if(Auth::check()) {
+            return view('showArticle', compact('article'));
+        }
+        else {
+            return redirect('/register');
+        }
+        
     }
 
     /**
@@ -69,14 +76,23 @@ class ArticleController extends Controller
      */
     public function edit($id)
     {
-        if (Gate::forUser($user)->allows('edit-article', $article)) {
-            $articles = Article::findOrFail($id);
-            return view('edit',compact('article'));
+        $article = Article::findOrFail($id);
+        $auth =  Auth::user()->id;
+        $author = $article->author;
+        
+        if($auth == $author){
+                return view('edit',compact('article'));
+        }else{
+            return "error";
         }
-
-        if (Gate::forUser($user)->denies('update-post', $post)) {
-            return "not allowed";
-        }
+        // if (Gate::forUser($id)->allows('update-post', $post)) {
+        // }
+        // if (Gate::denies('update-post', $post)) {
+        //     return "error";
+        // }
+        // if (Gate::forUser($user)->denies('update-post', $artciles)) {
+        //     return "not allowed";
+        // }
     }
 
     /**
@@ -89,18 +105,14 @@ class ArticleController extends Controller
     public function update(Request $request, $id)
     {
         $valideData = $request->validate([
-            'date' => 'required|min:1|max:255',
-            'author' => 'required|min:5|max:255',
-            'title' => 'required|min:5|max:255',
-            'image' => 'required|min:5|max:255',
+            'title' => 'required|max:255',
             'description' => 'max:400',
-
         ]);
         $article = Article::where('id', $id)
             ->update($valideData);
 
         $article = Article::findOrFail($id);
-        return view('home', compact('article'));
+        return redirect('/');
     }
 
     /**

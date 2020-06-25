@@ -1,30 +1,24 @@
 
-<style>
-      input {
-            display: block;
-            margin: 10px;
-      }
-</style>
 
-      <h2>Edité article {{$article->title}}</h2>
 
-      <nav>
-            <a href="/">HOME</a>
-      </nav>
+@extends('layouts.app')
+
+@section('content')
+
+
+      <h2>Edité article {{ $article->title }}</h2>
+
 
 
       <!-- Create Post Form -->
-      <form action="/create" method="POST">
-            {{-- Token for cross-site security --}}
+      <form action="/edit/{{ $article->id }}" method="POST">
             {{ csrf_field() }}
-            <input type="text" name="date" id="date" placeholder="Date de l'article">
-            <input type="text" name="title" id="title" placeholder="Titre de l'article">
-            <input type="text" name="image" id="image" placeholder="url image">
-            <input type="textarea" name="description" id="description" rows="5" cols="30" placeholder="Décrire votre article">
+            {{ method_field('PATCH') }}
+            <input type="text" name="title" id="title" placeholder="Titre de l'article" value="{{ $article->title }}">
+            <input type="textarea" name="description" id="description" rows="5" cols="30" placeholder="Décrire votre article" value="{{ $article->description }}">
             <input type="submit" value="Save">
       </form>
       
-
       <!-- Erros Handling -->
       @if ($errors->any())
       <div class="alert alert-danger">
@@ -35,3 +29,5 @@
             </ul>
       </div>
       @endif
+
+@endsection
