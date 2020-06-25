@@ -13,7 +13,7 @@
     -ms-transform: scale(1);
     transform: scale(1); }
     
-    @media (max-width: 450px) {
+@media (max-width: 450px) {
     .gallery {
     -webkit-column-count: 1;
     -moz-column-count: 1;
@@ -22,4 +22,4 @@
     -moz-column-width: 100%;
     column-width: 100%;
     }
-    }
+}
