@@ -22,6 +22,12 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/create', 'ArticleController@create');
 Route::post('/create', 'ArticleController@store');
+
+
+Route::get('/edit/{id}', 'ArticleController@edit');
+Route::patch('/edit/{id}', 'ArticleController@update');
+
+
 Route::get('/show/{id}', 'ArticleController@show');
 
 Route::group(['prefix' => 'admin'], function () {
