@@ -23,4 +23,12 @@
     column-width: 100%;
   }
 }
+
+.avatar img {
+  max-width: 70px;
+}
+
+.username {
+  margin-left: 15px;
+}
 /*# sourceMappingURL=style.css.map */
