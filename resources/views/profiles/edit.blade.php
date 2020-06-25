@@ -8,14 +8,22 @@
       {{ method_field('PATCH') }}
 
       <input type="number" name="id" readonly class="d-none" value="{{ Auth::user()->id }}">
+
       <div class="form-group">
-        <label for="profil-name-edit">Pseudo</label>
-        <input type="text" name="name" class="form-control" id="profil-name-edit" placeholder="Enter your pseudo" value="{{ Auth::user()->name }}">
+        <label for="profil-pseudo-edit">Pseudo</label>
+        <input type="text" name="pseudo" class="form-control" id="profil-pseudo-edit" placeholder="Enter your pseudo" value="{{ Auth::user()->pseudo }}">
       </div>
+
       <div class="form-group">
-        <label for="profil-password-edit">Mot de passe</label>
-        <input type="password" name="password" class="form-control" id="profil-password-edit" placeholder="Mot de passe" value="{{ Auth::user()->password }}">
+            <label for="profil-firstname-edit">Prénom</label>
+            <input type="text" name="firstname" class="form-control" id="profil-firstname-edit" placeholder="Enter your firstname" value="{{ Auth::user()->firstname }}">
       </div>
+
+      <div class="form-group">
+            <label for="profil-lastname-edit">Nom</label>
+            <input type="text" name="lastname" class="form-control" id="profil-lastname-edit" placeholder="Enter your lastname" value="{{ Auth::user()->lastname }}">
+      </div>
+
       <div class="form-group">
             <label for="profil-mail-edit">Email</label>
             <input type="email" name="email" class="form-control" id="profil-mail-edit" placeholder="Email" value="{{ Auth::user()->email }}">

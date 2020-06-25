@@ -41,7 +41,7 @@ class ArticleController extends Controller
     {   
         $valideData = $request->validate([
             'title' => 'required|max:255',
-            'image' => 'required',
+            'image' => 'required|max:1000',
             'description' => 'max:400',
         ]);
         $valideData['author'] = Auth::user()->id;
