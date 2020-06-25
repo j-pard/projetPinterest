@@ -4,7 +4,8 @@
     "sources": [
         "../Scss/style.scss",
         "../Scss/_login.scss",
-        "../Scss/_gallery.scss"
+        "../Scss/_gallery.scss",
+        "../Scss/_profile.scss"
     ],
     "names": [],
     "file": "style.css"
