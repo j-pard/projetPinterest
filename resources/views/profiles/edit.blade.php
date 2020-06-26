@@ -8,11 +8,11 @@
         <div class="row">
         <!-- left column -->
         <div class="col-md-3">
-          <div class="text-center">
-            <img src="{{ Auth::user()->avatar }}" class="avatar img-circle" alt="avatar">
-            
-            <a href="/image-upload">Changer photo de profil</a>
-            <a href="/cover-upload">Changer photo de couverture</a>
+          <div class="avataredith">
+            <img src="{{ Auth::user()->avatar }}"  alt="User avatar">
+            <hr>
+            <button type="submit" class="btn btn-secondary"><a href="/image-upload">Changer photo de profil</a></button>
+            <button type="submit" class="btn btn-secondary"><a href="/cover-upload">Changer photo de couverture</a></button>
 
           </div>
         </div>

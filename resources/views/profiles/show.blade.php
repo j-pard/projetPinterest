@@ -8,11 +8,10 @@
             <h3>Nom : {{ Auth::user()->pseudo }}</h3>
             <h3>Email : {{ Auth::user()->email }}</h3> -->
 
-  <div class="jumbotron jumbotron-fluid">
-      <div class="development container">
+  
+      <div class="coverimage">
             <img src="{{ Auth::user()->cover }}"  alt="User cover">
           </div>
-  </div>
   
 <div class="row">
 
