@@ -57,6 +57,12 @@
   margin: 5px;
 }
 
+.titleimg {
+  background-color: black;
+  color: white;
+  display: table-cell;
+}
+
 /*
 *
 * ===========================================================

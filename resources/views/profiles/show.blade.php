@@ -34,6 +34,8 @@
 
       <section class="container ">
             <div class="gallery" id="gallery">
+
+                  <h4 class="titleimg">Tableaux</h4>
             @php
                   $collection = DB::table('articles')->where('author', Auth::user()->id)->get();
             @endphp
