@@ -21,19 +21,18 @@ class FollowController extends Controller
             ->where('following_id', $author_id)
             ->exists();
 
-        var_dump($author_id);
-        var_dump($user);
-
-        var_dump($isFollowed);
-
-        if (is_null($isFollowed)) {
-            return "hello";
+        if ($isFollowed) {
+            // Follow ok -> Unfollow
+            DB::table('user_follower')
+            ->where('follower_id', $user)
+            ->where('following_id', $author_id)
+            ->delete();
         } else {
-            return "not hello";
+            // Follow pas ok -> Follow
+            DB::table('user_follower')->insert([
+                ['follower_id' => $user, 'following_id' => $author_id]
+            ]);
         }
-        // $article = Article::findOrFail($id);
-        // echo ($article->get()->value('author'));
-        // $author_id = DB::table('users')->where('id', $article->author)->value('id');
-        // dd($id);
+        return redirect()->back();
     }
 }

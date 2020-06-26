@@ -1,36 +1,16 @@
 @extends('layouts.app')
 
 @section('content')
-<!-- <div class="container">
 
-        @if(Auth::user()->id == $article->author)
-            <a href="/edit/{{ $article->id }}" class="btn btn-info" role="button">Modifier article</a>
-        @endif
-
-        @php
-            $author = DB::table('users')->where('id', $article->author)->value('pseudo');
-            $author_id = DB::table('users')->where('id', $article->author)->value('id');
-        @endphp
-
-        <h2>{{ $article->title }}</h2>
-
-        <ul>
-            <li><img src = "{{$article->image}}"></li>
-            <li>{{$article->description}}</li>
-            <li><a href="/profiles/{{ $author_id }}">{{$author}}</a></li>
-            <li>{{$article->created_at}}</li>
-        </ul>
-
-    </div> -->
 
 @php
-$author = DB::table('users')->where('id', $article->author)->value('pseudo');
-$author_id = DB::table('users')->where('id', $article->author)->value('id');
+    $author = DB::table('users')->where('id', $article->author)->value('pseudo');
+    $author_id = DB::table('users')->where('id', $article->author)->value('id');
 
-$author_avatar = DB::table('users')->where('id', $article->author)->value('avatar');
+    $author_avatar = DB::table('users')->where('id', $article->author)->value('avatar');
 
-$originalDate = $article->updated_at;
-$newDate = date("d-m-Y", strtotime($originalDate));
+    $originalDate = $article->updated_at;
+    $newDate = date("d-m-Y", strtotime($originalDate));
 @endphp
 
 <section class="hero">
@@ -54,10 +34,28 @@ $newDate = date("d-m-Y", strtotime($originalDate));
                             </div>
                             <div class="media-body">
                                 <p class="m-0">{{ $author }}</p>
+
+                                {{-- Follow --}}
+                                @php
+                                    $isFollowed = DB::table('user_follower')
+                                        ->where('follower_id', Auth::user()->id)
+                                        ->where('following_id', $author_id)
+                                        ->exists();
+
+                                    if($isFollowed) {
+                                        $btnValue = "Unfollow";
+                                    }
+                                    else {
+                                        $btnValue = "Follow"; 
+                                    }
+                                @endphp
+
                                 <form action="/followers/{{ $author_id }}" method="GET">
                                     <input readonly class="d-none" type="number" name="author_id" value="{{ $author_id }}">
-                                    <input type="submit" value="follow">
+                                    <input type="submit" value="{{ $btnValue }}">
                                 </form>
+
+
                                 <small><span><i class="icon ion-md-time"></i> {{$newDate}}</span></small>
                                 <small><span><i class="icon ion-md-time"></i> {{$article->title}}</span></small>
                             </div>
