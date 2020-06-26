@@ -39,13 +39,12 @@
                 <!-- Modal content-->
                 <div class="modal-content">
                   <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h4 class="modal-title">List of following</h4>
+                        <h4 class="modal-title text-left">List of following</h4>
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
                   </div>
                   <div class="modal-body">
                         <ul>
                               @php
-                                    //$follower_ID = DB::table('user_follower')->where('follower_id', Auth::user()->id)->value('following_id');
                                     
                                     $follows = DB::table('user_follower')
                                           ->join('users', 'user_follower.following_id', '=', 'users.id')
@@ -69,22 +68,6 @@
             
           </div>
 
-      {{-- <div class="following">
-            <h3>Following</h3>
-            <ul>
-                  @php                        
-                        $follows = DB::table('user_follower')
-                              ->join('users', 'user_follower.following_id', '=', 'users.id')
-                              ->select('users.pseudo')
-                              ->get();
-                  @endphp
-                  @foreach ($follows as $follow)
-                        <li>
-                              {{$follow->pseudo}}
-                        </li>
-                  @endforeach
-            </ul>
-      </div> --}}
       </section>
 
       <section class="container ">
