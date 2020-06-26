@@ -10,6 +10,7 @@
 
   <div class="jumbotron jumbotron-fluid">
       <div class="development container">
+            <img src="{{ Auth::user()->cover }}"  alt="User cover">
           </div>
   </div>
   

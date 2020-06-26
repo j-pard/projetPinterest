@@ -9,10 +9,11 @@
         <!-- left column -->
         <div class="col-md-3">
           <div class="text-center">
-            <img src="//placehold.it/100" class="avatar img-circle" alt="avatar">
-            <h6>Changer votre photo de profil</h6>
+            <img src="/{{ Auth::user()->avatar }}" class="avatar img-circle" alt="avatar">
+            
+            <a href="/image-upload">Changer photo de profil</a>
+            <a href="/cover-upload">Changer photo de couverture</a>
 
-            <input type="file" class="form-control">
           </div>
         </div>
 
