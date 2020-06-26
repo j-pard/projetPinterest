@@ -15,7 +15,7 @@
 
                   
             <div class="avatar">
-                  <img src="/{{ $user->avatar }}"  alt="User avatar">
+                  <img src="{{ $user->avatar }}"  alt="User avatar">
             </div>    
             
             

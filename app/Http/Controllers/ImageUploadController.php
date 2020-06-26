@@ -37,7 +37,7 @@ class ImageUploadController extends Controller
         $auth =  Auth::user()->id;
         User::where('id', $auth)
             ->update([
-                  'avatar' => '/images/' . $imageName
+                  'avatar' => 'images/' . $imageName
             ]);
    
         return back()
