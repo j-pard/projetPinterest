@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Gate;
 use Illuminate\Http\Request;
 
 class ArticleController extends Controller
-{   
+{
     /**
      * Display a listing of the resource.
      *
@@ -39,8 +39,8 @@ class ArticleController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    
-    {   
+
+    {
         $valideData = $request->validate([
             'title' => 'required|max:255',
             'image' => 'required|max:1000',
@@ -48,7 +48,7 @@ class ArticleController extends Controller
         ]);
         $valideData['author'] = Auth::user()->id;
 
-        
+
         Article::create($valideData);
     }
 
@@ -61,13 +61,11 @@ class ArticleController extends Controller
     public function show($id)
     {
         $article = Article::findOrFail($id);
-        if(Auth::check()) {
+        if (Auth::check()) {
             return view('showArticle', compact('article'));
-        }
-        else {
+        } else {
             return redirect('/register');
         }
-        
     }
 
     /**
@@ -81,10 +79,10 @@ class ArticleController extends Controller
         $article = Article::findOrFail($id);
         $auth =  Auth::user()->id;
         $author = $article->author;
-        
-        if($auth == $author){
-                return view('edit',compact('article'));
-        }else{
+
+        if ($auth == $author) {
+            return view('edit', compact('article'));
+        } else {
             return "error";
         }
         // if (Gate::forUser($id)->allows('update-post', $post)) {

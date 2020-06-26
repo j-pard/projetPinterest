@@ -11,9 +11,9 @@ class UsersController extends Controller
 {
 
     public function __construct()
-        {
-            $this->middleware('ajax')->only('destroy');
-        }
+    {
+        $this->middleware('ajax')->only('destroy');
+    }
 
     
     public function show($id) {
@@ -67,9 +67,8 @@ class UsersController extends Controller
      */
     public function destroy($id)
     {
-        $this->authorize ('manage', $user);
+        $this->authorize('manage', $user);
         $user->delete();
-        return response ()->json ();
+        return response()->json();
     }
-
 }
