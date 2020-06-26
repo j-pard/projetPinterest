@@ -59,15 +59,12 @@
   width: 100%;
 }
 
-.avataredith img {
-  width: 150px;
-  height: 150px;
-  border-radius: 50%;
-  margin: 5px;
+.update a {
+  color: white;
 }
 
-.avataredith a {
-  color: white;
+.update {
+  margin-top: 60px;
 }
 
 .btn {
@@ -291,5 +288,18 @@
   font-family: 'Rokkitt', serif;
   font-size: 16px;
   color: #8d8d8d;
+}
+
+.avataredith {
+  width: 150px;
+  height: 150px;
+  margin: 15px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.avataredith img {
+  width: 150px;
+  height: auto;
 }
 /*# sourceMappingURL=style.css.map */

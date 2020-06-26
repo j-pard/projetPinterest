@@ -9,12 +9,15 @@
         <!-- left column -->
         <div class="col-md-3">
           <div class="avataredith">
-            <img src="{{ Auth::user()->avatar }}"  alt="User avatar">
-            <hr>
+            <a href="/image-upload" title="Changer photo de profil"><img src="{{ Auth::user()->avatar }}"  alt="User avatar"></a>
+            
+      </div>
+
+            <div class="update">
             <button type="submit" class="btn btn-secondary"><a href="/image-upload">Changer photo de profil</a></button>
             <button type="submit" class="btn btn-secondary"><a href="/cover-upload">Changer photo de couverture</a></button>
-
-          </div>
+            </div>
+          
         </div>
 
         <!-- edit form column -->
