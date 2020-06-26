@@ -11,18 +11,6 @@
 
     $originalDate = $article->updated_at;
     $newDate = date("d-m-Y", strtotime($originalDate));
-
-    $isFollowed = DB::table('user_follower')
-                                        ->where('follower_id', Auth::user()->id)
-                                        ->where('following_id', $author_id)
-                                        ->exists();
-
-                                    if($isFollowed) {
-                                        $btnValue = "Unfollow";
-                                    }
-                                    else {
-                                        $btnValue = "Follow"; 
-                                    }
 @endphp
 
 <section class="hero">
@@ -39,6 +27,19 @@
                             <a href="/edit/{{ $article->id }}" class="btn btn-flat btn-flat-icon" role="button"><em class="fa fa-cog"></em></a>
                         </div>
                         @endif
+                        @php
+                            $isFollowed = DB::table('user_follower')
+                                        ->where('follower_id', Auth::user()->id)
+                                        ->where('following_id', $author_id)
+                                        ->exists();
+
+                            if($isFollowed) {
+                                $btnValue = "Unfollow";
+                            }
+                            else {
+                                 $btnValue = "Follow"; 
+                            }
+                        @endphp
                         @if(Auth::user()->id != $article->author)
                         <div class="float-right">
                             <form action="/followers/{{ $author_id }}" method="GET">
