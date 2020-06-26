@@ -5,12 +5,10 @@ namespace App;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
-use Overtrue\LaravelFollow\Followable;
 
 
 class User extends \TCG\Voyager\Models\User
 {
-    use Followable;
     use Notifiable;
     /**
      * The attributes that are mass assignable.
