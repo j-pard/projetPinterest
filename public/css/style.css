@@ -24,19 +24,51 @@
   }
 }
 
+.profilavatar {
+  z-index: 1;
+  margin-top: -30px;
+}
+
+.avatar {
+  width: 100px;
+  height: 100px;
+  overflow: hidden;
+  border-radius: 50%;
+  margin: 15px;
+  border: solid 3px white;
+}
+
 .avatar img {
-  max-width: 70px;
+  max-width: 100px;
+  max-height: auto;
 }
 
 .username {
   margin-left: 15px;
+  margin-top: 50px;
   color: black;
 }
 
-.jumbotron {
-  background-image: url("https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(73).jpg");
-  background-size: cover;
-  height: 100%;
+.coverimage {
+  height: 300px;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.coverimage img {
+  width: 100%;
+}
+
+.update a {
+  color: white;
+}
+
+.update {
+  margin-top: 60px;
+}
+
+.btn {
+  margin: 5px;
 }
 
 /*
@@ -72,8 +104,8 @@
   width: 32px;
   padding: 0;
   overflow: hidden;
-  color: #fff !important;
-  background: #b5b6b6;
+  color: white !important;
+  background: #c8232c;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -96,7 +128,7 @@
 }
 
 .cardbox .float-right a:hover {
-  background: #f4f4f4 !important;
+  background: #a5a4a4 !important;
 }
 
 .cardbox .float-right a.dropdown-item {
@@ -256,5 +288,18 @@
   font-family: 'Rokkitt', serif;
   font-size: 16px;
   color: #8d8d8d;
+}
+
+.avataredith {
+  width: 150px;
+  height: 150px;
+  margin: 15px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.avataredith img {
+  width: 150px;
+  height: auto;
 }
 /*# sourceMappingURL=style.css.map */
