@@ -17,6 +17,8 @@ class ArticleController extends Controller
     public function index()
     {
         $articles = Article::get();
+        $articles = collect($articles)->sortByDesc('updated_at')->all();
+
         return view('welcome', compact('articles'));
     }
 
