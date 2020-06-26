@@ -1,26 +1,35 @@
 .gallery {
-  -webkit-column-count: 3;
   column-count: 3;
-  -webkit-column-width: 33%;
   column-width: 33%;
 }
 
 .gallery .pics {
-  -webkit-transition: all 350ms ease;
   transition: all 350ms ease;
 }
 
 .gallery .animation {
-  -webkit-transform: scale(1);
   transform: scale(1);
 }
 
 @media (max-width: 450px) {
   .gallery {
-    -webkit-column-count: 1;
     column-count: 1;
-    -webkit-column-width: 100%;
     column-width: 100%;
   }
+}
+
+.avatar img {
+  max-width: 70px;
+}
+
+.username {
+  margin-left: 15px;
+  color: black;
+}
+
+.jumbotron {
+  background-image: url("https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(73).jpg");
+  background-size: cover;
+  height: 100%;
 }
 /*# sourceMappingURL=style.css.map */
