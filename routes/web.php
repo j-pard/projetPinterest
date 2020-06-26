@@ -27,7 +27,7 @@ Route::post('/create', 'ArticleController@store');
 Route::get('/edit/{id}', 'ArticleController@edit');
 Route::patch('/edit/{id}', 'ArticleController@update');
 
-Route::get('/followers', 'UsersController@followers');
+Route::get('/followers/{id}', 'FollowController@followers');
 
 
 Route::get('/show/{id}', 'ArticleController@show');
