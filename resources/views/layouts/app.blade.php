@@ -20,6 +20,7 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('css/style.css?v=2') }}" rel="stylesheet">
     <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/126bbe9047.js" crossorigin="anonymous"></script>
 
 </head>
 <body>
@@ -28,6 +29,10 @@
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
                     Acceuil
+                </a>
+
+                <a href="/create">
+                    <i class="fas fa-plus-circle"></i>
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
