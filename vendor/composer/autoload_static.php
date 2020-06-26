@@ -109,6 +109,7 @@ class ComposerStaticInit0170ee68bb4c8673770b462a7a91d8d9
         ),
         'O' => 
         array (
+            'Overtrue\\LaravelFollow\\' => 23,
             'Opis\\Closure\\' => 13,
         ),
         'N' => 
@@ -381,6 +382,10 @@ class ComposerStaticInit0170ee68bb4c8673770b462a7a91d8d9
         'PhpOption\\' => 
         array (
             0 => __DIR__ . '/..' . '/phpoption/phpoption/src/PhpOption',
+        ),
+        'Overtrue\\LaravelFollow\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/overtrue/laravel-follow/src',
         ),
         'Opis\\Closure\\' => 
         array (
@@ -3765,6 +3770,12 @@ class ComposerStaticInit0170ee68bb4c8673770b462a7a91d8d9
         'Opis\\Closure\\SecurityProvider' => __DIR__ . '/..' . '/opis/closure/src/SecurityProvider.php',
         'Opis\\Closure\\SelfReference' => __DIR__ . '/..' . '/opis/closure/src/SelfReference.php',
         'Opis\\Closure\\SerializableClosure' => __DIR__ . '/..' . '/opis/closure/src/SerializableClosure.php',
+        'Overtrue\\LaravelFollow\\Events\\Event' => __DIR__ . '/..' . '/overtrue/laravel-follow/src/Events/Event.php',
+        'Overtrue\\LaravelFollow\\Events\\Followed' => __DIR__ . '/..' . '/overtrue/laravel-follow/src/Events/Followed.php',
+        'Overtrue\\LaravelFollow\\Events\\Unfollowed' => __DIR__ . '/..' . '/overtrue/laravel-follow/src/Events/Unfollowed.php',
+        'Overtrue\\LaravelFollow\\FollowServiceProvider' => __DIR__ . '/..' . '/overtrue/laravel-follow/src/FollowServiceProvider.php',
+        'Overtrue\\LaravelFollow\\Followable' => __DIR__ . '/..' . '/overtrue/laravel-follow/src/Followable.php',
+        'Overtrue\\LaravelFollow\\UserFollower' => __DIR__ . '/..' . '/overtrue/laravel-follow/src/UserFollower.php',
         'PHPUnit\\Exception' => __DIR__ . '/..' . '/phpunit/phpunit/src/Exception.php',
         'PHPUnit\\Framework\\Assert' => __DIR__ . '/..' . '/phpunit/phpunit/src/Framework/Assert.php',
         'PHPUnit\\Framework\\AssertionFailedError' => __DIR__ . '/..' . '/phpunit/phpunit/src/Framework/Exception/AssertionFailedError.php',

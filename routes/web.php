@@ -27,6 +27,8 @@ Route::post('/create', 'ArticleController@store');
 Route::get('/edit/{id}', 'ArticleController@edit');
 Route::patch('/edit/{id}', 'ArticleController@update');
 
+Route::get('/followers', 'UsersController@followers');
+
 
 Route::get('/show/{id}', 'ArticleController@show');
 
@@ -34,8 +36,8 @@ Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
 });
 
-Route::group(['middleware' => 'auth'], function() {
-    Route::get('/profil', function() {
+Route::group(['middleware' => 'auth'], function () {
+    Route::get('/profil', function () {
         return view('profiles.show');
     });
     Route::get('/profil/edit', 'UsersController@edit');

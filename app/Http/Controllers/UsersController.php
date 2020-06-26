@@ -10,9 +10,9 @@ class UsersController extends Controller
 {
 
     public function __construct()
-        {
-            $this->middleware('ajax')->only('destroy');
-        }
+    {
+        $this->middleware('ajax')->only('destroy');
+    }
 
     /**
      * Show the form for editing the specified resource.
@@ -55,9 +55,8 @@ class UsersController extends Controller
      */
     public function destroy($id)
     {
-        $this->authorize ('manage', $user);
+        $this->authorize('manage', $user);
         $user->delete();
-        return response ()->json ();
+        return response()->json();
     }
-
 }
