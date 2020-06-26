@@ -29,8 +29,8 @@
    width: 32px;
    padding: 0;
    overflow: hidden;
-   color: #fff !important;
-   background: #b5b6b6;
+   color: white !important;
+   background:#c8232c ;
    
   display: flex;
   flex-direction: column;
@@ -43,7 +43,7 @@
     left: 13px !important;  
   }
   .cardbox .float-right a:hover{
-    background: #f4f4f4 !important;	
+    background: #a5a4a4 !important;	
   }
   .cardbox .float-right a.dropdown-item {
     display: block;

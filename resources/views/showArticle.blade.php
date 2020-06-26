@@ -49,7 +49,7 @@ $newDate = date("d-m-Y", strtotime($originalDate));
                         @endif
                         <div class="media m-0">
                             <div class="d-flex mr-3">
-                                <a href=""><img class="img-fluid rounded-circle" src="/{{ $author_avatar }}"
+                                <a href=""><img class="img-fluid rounded-circle" src="{{ Auth::user()->avatar }}"  alt="User avatar"
                                         alt="User"></a>
                             </div>
                             <div class="media-body">
@@ -69,6 +69,7 @@ $newDate = date("d-m-Y", strtotime($originalDate));
                     <div class="cardbox-base">
                         <div class="media m-0">
                             <div class="media-body">
+                                <h5 class="card-title text-center">Description</h5>
                             <p class="m-0">{{$article->description}}</p>
                         </div>
                         </div>
