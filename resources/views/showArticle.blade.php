@@ -54,6 +54,10 @@ $newDate = date("d-m-Y", strtotime($originalDate));
                             </div>
                             <div class="media-body">
                                 <p class="m-0">{{ $author }}</p>
+                                <form action="/followers/{{ $author_id }}" method="GET">
+                                    <input readonly class="d-none" type="number" name="author_id" value="{{ $author_id }}">
+                                    <input type="submit" value="follow">
+                                </form>
                                 <small><span><i class="icon ion-md-time"></i> {{$newDate}}</span></small>
                                 <small><span><i class="icon ion-md-time"></i> {{$article->title}}</span></small>
                             </div>
