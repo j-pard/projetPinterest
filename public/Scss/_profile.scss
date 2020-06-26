@@ -53,3 +53,19 @@
       margin: 5px;
   }
 
+.following {
+  float: right;
+  margin-top: -70px;
+  
+}
+
+
+.following li {
+ list-style: none; 
+}
+
+.following .modal-title h4 {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+}

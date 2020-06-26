@@ -24,10 +24,52 @@
                   </blockquote>
             </div>
             </div>
-      </section>
+      
 
       {{-- Following list --}}
-      <section>
+
+      <div class="following">
+            <!-- Trigger the modal with a button -->
+            <button type="button" class="btn btn-secondary btn-lg" data-toggle="modal" data-target="#myModal">Following</button>
+          
+            <!-- Modal -->
+            <div class="modal fade" id="myModal" role="dialog">
+              <div class="modal-dialog">
+              
+                <!-- Modal content-->
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">List of following</h4>
+                  </div>
+                  <div class="modal-body">
+                        <ul>
+                              @php
+                                    //$follower_ID = DB::table('user_follower')->where('follower_id', Auth::user()->id)->value('following_id');
+                                    
+                                    $follows = DB::table('user_follower')
+                                          ->join('users', 'user_follower.following_id', '=', 'users.id')
+                                          ->select('users.pseudo')
+                                          ->get();
+                              @endphp
+                              @foreach ($follows as $follow)
+                                    <li>
+                                          {{$follow->pseudo}}
+                                    </li>
+                              @endforeach
+                        </ul>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                  </div>
+                </div>
+                
+              </div>
+            </div>
+            
+          </div>
+
+      {{-- <div class="following">
             <h3>Following</h3>
             <ul>
                   @php                        
@@ -42,8 +84,8 @@
                         </li>
                   @endforeach
             </ul>
+      </div> --}}
       </section>
-      
 
       <section class="container ">
             <div class="gallery" id="gallery">
