@@ -27,35 +27,35 @@
                             <a href="/edit/{{ $article->id }}" class="btn btn-flat btn-flat-icon" role="button"><em class="fa fa-cog"></em></a>
                         </div>
                         @endif
+                        @php
+                            $isFollowed = DB::table('user_follower')
+                                        ->where('follower_id', Auth::user()->id)
+                                        ->where('following_id', $author_id)
+                                        ->exists();
+
+                            if($isFollowed) {
+                                $btnValue = "Unfollow";
+                            }
+                            else {
+                                 $btnValue = "Follow"; 
+                            }
+                        @endphp
+                        @if(Auth::user()->id != $article->author)
+                        <div class="float-right">
+                            <form action="/followers/{{ $author_id }}" method="GET">
+                                <input readonly class="d-none" type="number" name="author_id" value="{{ $author_id }}">
+                                <input type="submit" value="{{ $btnValue }}">
+                            </form>
+                        </div>
+                        @endif
+
                         <div class="media m-0">
                             <div class="d-flex mr-3">
                                 <a href="/profiles/{{ $author_id }}"><img class="img-fluid rounded-circle" src="/{{$author_avatar}}"  alt="User avatar"
                                         alt="User"></a>
                             </div>
                             <div class="media-body">
-                                <p class="m-0">{{ $author }}</p>
-
-                                {{-- Follow --}}
-                                @php
-                                    $isFollowed = DB::table('user_follower')
-                                        ->where('follower_id', Auth::user()->id)
-                                        ->where('following_id', $author_id)
-                                        ->exists();
-
-                                    if($isFollowed) {
-                                        $btnValue = "Unfollow";
-                                    }
-                                    else {
-                                        $btnValue = "Follow"; 
-                                    }
-                                @endphp
-
-                                <form action="/followers/{{ $author_id }}" method="GET">
-                                    <input readonly class="d-none" type="number" name="author_id" value="{{ $author_id }}">
-                                    <input type="submit" value="{{ $btnValue }}">
-                                </form>
-
-
+                                <p class="m-0">{{ $author }}</p>    
                                 <small><span><i class="icon ion-md-time"></i> {{$newDate}}</span></small>
                                 <small><span><i class="icon ion-md-time"></i> {{$article->title}}</span></small>
                             </div>
