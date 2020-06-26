@@ -42,4 +42,5 @@ Route::group(['middleware' => 'auth'], function () {
     });
     Route::get('/profil/edit', 'UsersController@edit');
     Route::patch('/profil/update', 'UsersController@update');
+    Route::get('/profiles/{id}', 'UsersController@show');
 });
