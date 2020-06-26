@@ -303,20 +303,6 @@
             "autoload",
             "dependency",
             "package"
-        ],
-        "funding": [
-            {
-                "url": "https://packagist.com",
-                "type": "custom"
-            },
-            {
-                "url": "https://github.com/composer",
-                "type": "github"
-            },
-            {
-                "url": "https://tidelift.com/funding/github/packagist/composer/composer",
-                "type": "tidelift"
-            }
         ]
     },
     {
@@ -2493,12 +2479,6 @@
             "s3",
             "sftp",
             "storage"
-        ],
-        "funding": [
-            {
-                "url": "https://offset.earth/frankdejonge",
-                "type": "other"
-            }
         ]
     },
     {
