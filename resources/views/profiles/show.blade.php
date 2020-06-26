@@ -8,10 +8,20 @@
             <h3>Nom : {{ Auth::user()->pseudo }}</h3>
             <h3>Email : {{ Auth::user()->email }}</h3> -->
 
+  <div class="jumbotron jumbotron-fluid">
+      <div class="development container">
+          </div>
+  </div>
+  
 <div class="row">
+
+      
     <div class="avatar">
       <img src="{{ Auth::user()->avatar }}"  alt="User avatar">
-    </div>
+    </div>    
+    
+  
+
     <div class="username">
       <blockquote>
         <h3>{{ Auth::user()->pseudo }}</h3>
@@ -38,4 +48,3 @@
             </div>
       </section>
 @endsection
-

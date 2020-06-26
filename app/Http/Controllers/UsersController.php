@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\User;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Auth;
 
 class UsersController extends Controller
 {
@@ -13,6 +14,17 @@ class UsersController extends Controller
         {
             $this->middleware('ajax')->only('destroy');
         }
+
+    
+    public function show($id) {
+        $user = User::findOrFail($id);
+        if(Auth::check()) {
+            return view('profiles.showProfiles', compact('user'));
+        }
+        else {
+            return redirect('/register');
+        }
+    }
 
     /**
      * Show the form for editing the specified resource.
