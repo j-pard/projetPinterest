@@ -41,4 +41,11 @@ Route::group(['middleware' => 'auth'], function() {
     Route::get('/profil/edit', 'UsersController@edit');
     Route::patch('/profil/update', 'UsersController@update');
     Route::get('/profiles/{id}', 'UsersController@show');
+
+    Route::get('/image-upload', 'ImageUploadController@upload');
+    Route::post('/image-upload', 'ImageUploadController@uploadPost');
+
+    Route::get('/cover-upload', 'ImageUploadController@coverUpload');
+    Route::post('/cover-upload', 'ImageUploadController@coverUploadPost');
 });
+
