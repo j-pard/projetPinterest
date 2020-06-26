@@ -24,22 +24,39 @@
   }
 }
 
-.avatar img {
+.profilavatar {
+  z-index: 1;
+  margin-top: -30px;
+}
+
+.avatar {
   width: 100px;
   height: 100px;
+  overflow: hidden;
   border-radius: 50%;
-  margin: 5px;
+  margin: 15px;
+  border: solid 3px white;
+}
+
+.avatar img {
+  max-width: 100px;
+  max-height: auto;
 }
 
 .username {
   margin-left: 15px;
+  margin-top: 50px;
   color: black;
+}
+
+.coverimage {
+  height: 300px;
+  overflow: hidden;
+  z-index: 0;
 }
 
 .coverimage img {
   width: 100%;
-  height: 300px;
-  margin: 15px;
 }
 
 .avataredith img {
@@ -55,12 +72,6 @@
 
 .btn {
   margin: 5px;
-}
-
-.titleimg {
-  background-color: black;
-  color: white;
-  display: table-cell;
 }
 
 /*

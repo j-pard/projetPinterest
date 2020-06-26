@@ -13,7 +13,7 @@
             <img src="{{ Auth::user()->cover }}"  alt="User cover">
           </div>
   
-<div class="row">
+<div class="row profilavatar">
 
       
     <div class="avatar">
@@ -35,7 +35,6 @@
       <section class="container ">
             <div class="gallery" id="gallery">
 
-                  <h4 class="titleimg">Tableaux</h4>
             @php
                   $collection = DB::table('articles')->where('author', Auth::user()->id)->get();
             @endphp
