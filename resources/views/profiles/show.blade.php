@@ -30,9 +30,7 @@
       <section>
             <h3>Following</h3>
             <ul>
-                  @php
-                        //$follower_ID = DB::table('user_follower')->where('follower_id', Auth::user()->id)->value('following_id');
-                        
+                  @php                        
                         $follows = DB::table('user_follower')
                               ->join('users', 'user_follower.following_id', '=', 'users.id')
                               ->select('users.pseudo')
